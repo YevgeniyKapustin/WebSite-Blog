@@ -2,13 +2,12 @@
 {% load static %}
 
 {% block title %}
-{{ object.title }}
+{{ article.title }}
 {% endblock %}
 
 {% block content %}
-
-<h2 class="gy-5">{{ object.title }}</h2>
+<h2 class="gy-5">{{ article.title }}</h2>
 <img src="{{ object.cover.url }}" class="img-fluid" alt="">
-<p>{{ object.content|safe }}</p>
-
+<p>{{ article.content|safe }}</p>
+<p class="position-absolute bottom-0 end-0" >{{ article.get_view_count }}</p>
 {% endblock %}
