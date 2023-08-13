@@ -1,6 +1,8 @@
 from django.db import models
 from django.urls import reverse
 
+from articles.utils import get_count
+
 
 class Article(models.Model):
     title = models.CharField(
@@ -28,8 +30,8 @@ class Article(models.Model):
     def __str__(self):
         return self.title
 
-    def get_view_count(self):
-        return count if (count := self.views.count()) else 0
+    def get_views_count(self):
+        return get_count(self, 'views')
 
     def get_absolute_url(self):
         return reverse('articlesdetailview', kwargs={'slug': self.slug})

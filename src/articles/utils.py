@@ -5,3 +5,7 @@ def get_client_ip(request):
     else:
         ip = request.META.get('REMOTE_ADDR')
     return ip
+
+
+def get_count(obj: object, counted: str) -> int:
+    return count if (count := getattr(obj, counted).count()) else 0

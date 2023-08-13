@@ -16,8 +16,10 @@
                         <div class="card-body text-dark card-img-overlay">
                             <h3 class="float-end card-title">{{ article.title }}</h3>
                             <p class="position-absolute bottom-0 start-0" >
-                                {{ article.date }}<br>
-                                просмотров: {{ article.get_view_count }}
+                                <span>
+                                    {{ article.date }}<br>
+                                    просмотров: {{ article.get_views_count }}
+                                </span>
                             </p>
                         </div>
                     </div>

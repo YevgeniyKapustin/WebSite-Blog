@@ -7,7 +7,14 @@
 
 {% block content %}
 <h2 class="gy-5">{{ article.title }}</h2>
+<p>
+    <span class="" >
+    {{ article.date }}
+    </span>
+    <span class="float-end" >
+         просмотров: {{ article.get_views_count }}
+    </span>
+</p>
 <img src="{{ object.cover.url }}" class="img-fluid" alt="">
 <p>{{ article.content|safe }}</p>
-<p class="position-absolute bottom-0 end-0" >{{ article.get_view_count }}</p>
 {% endblock %}
