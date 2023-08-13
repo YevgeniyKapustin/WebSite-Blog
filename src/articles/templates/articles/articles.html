@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12 gy-5">
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+            {% for article in articles %}
+                <a href="{% url 'article' article.slug %}" class="col">
+                    <div class="card border-dark mb-6 h-100">
+                        <img src="{{ article.cover.url }}" class="card-img" alt="">
+                        <div class="card-body text-dark card-img-overlay">
+                            <h3 class="float-end card-title">{{ article.title }}</h3>
+                            <p class="position-absolute bottom-0 start-0" >{{ article.date }}</p>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
