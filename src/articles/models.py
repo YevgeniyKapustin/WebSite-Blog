@@ -1,3 +1,5 @@
+import math
+
 from django.db import models
 from django.urls import reverse
 
@@ -35,6 +37,9 @@ class Article(models.Model):
 
     def get_absolute_url(self):
         return reverse('articlesdetailview', kwargs={'slug': self.slug})
+
+    def get_reading_time(self):
+        return math.ceil(len(self.content.split()) / 200)  # avg reading speed
 
     class Meta:
         ordering = ['-date']
