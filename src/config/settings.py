@@ -35,7 +35,8 @@ class DjangoSettings(BaseSettings):
         'django.contrib.messages',
         'django.contrib.staticfiles',
 
-        'articles'
+        'home',
+        'articles',
     ]
 
     MIDDLEWARE: list[str] = [

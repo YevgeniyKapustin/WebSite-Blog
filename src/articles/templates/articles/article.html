@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-<h2 class="gy-5">{{ article.title }}</h2>
+<h1 class="gy-5">{{ article.title }}</h1>
 <p>
     <span class="" >
     {{ article.date }}
@@ -15,6 +15,6 @@
          просмотров: {{ article.get_views_count }}
     </span>
 </p>
-<img src="{{ object.cover.url }}" class="img-fluid" alt="">
+<img src="{{ object.cover.url }}" class="rounded mx-auto d-block img-fluid" alt="">
 <p>{{ article.content|safe }}</p>
 {% endblock %}

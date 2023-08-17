@@ -8,11 +8,11 @@ from articles.services import get_all_articles
 class ArticlesListView(ListView):
     model = Article
     template_name = 'articles/articles.html'
+    context_object_name = 'articles'
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Статьи'
-        context['articles'] = get_all_articles()
         return context
 
 
