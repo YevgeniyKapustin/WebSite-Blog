@@ -32,7 +32,6 @@ class DjangoSettings(BaseSettings):
         'django.contrib.messages',
         'django.contrib.staticfiles',
 
-        'home',
         'articles',
         'about',
     ]
