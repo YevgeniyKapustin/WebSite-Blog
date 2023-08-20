@@ -7,6 +7,7 @@ from config import settings
 urlpatterns: list[path] = [
     path('admin/', admin.site.urls),
     path('about/', include('about.urls')),
+    path('mail/', include('mailing.urls')),
     path('', include('articles.urls')),
 ]
 

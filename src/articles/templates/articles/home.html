@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load mailing_tags %}
 
 {% block title %}
 {{ title }}
@@ -10,6 +11,7 @@
 {% endblock %}
 
 {% block content %}
+<div>{% contact_form %}</div>
 <div class="card shadow d-none d-md-block ">
     <img src="{% static 'img/home_cover.png' %}" class="rounded mx-auto d-block card-img" alt="">
     <div class="border-3 card-body text-dark card-img-overlay">
