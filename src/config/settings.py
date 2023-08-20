@@ -34,6 +34,7 @@ class DjangoSettings(BaseSettings):
 
         'home',
         'articles',
+        'about',
     ]
 
     MIDDLEWARE: list[str] = [

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+
+<h2 class="gy-5 ps-2 fw-bold border-dark opacity-75">
+    Привет!
+</h2>
+<div class="fs-5">
+    <p>Меня зовут Евгений Капустин, я - автор этого сайта. Все статьи пишу я.<br>
+    Мой сайт распространяется по MIT лицензии, а найти его можно на моем <a href="https://github.com/YevgeniyKapustin/WebSite-Blog">GitHub</a>.</p>
+    <p>Я просто пишу статьи и выкладываю их сюда, буду рад, если вам будут интересны мои рассуждения.</p>
+    <p>Связаться со мной можно в <a href="https://t.me/kapustaevg03">Телеграме</a>, <a href="https://vk.com/yevgeniykapustin">ВК</a> и по почте kapustaevg@gmail.com</p>
+</div>
+
+<img src="{% static 'img/alert.jpeg' %}" class="rounded mx-auto d-block img-fluid" alt="">
+{% endblock %}
