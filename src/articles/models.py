@@ -7,27 +7,13 @@ from articles.utils import get_count
 
 
 class Article(models.Model):
-    title = models.CharField(
-        max_length=100,
-        verbose_name='заголовок'
-    )
-    slug = models.SlugField(
-        max_length=100,
-        unique=True,
-        db_index=True,
-        verbose_name="slug"
-    )
-    content = models.TextField(
-        verbose_name='контент'
-    )
-    cover = models.ImageField(
-        upload_to='covers',
-        verbose_name='обложка'
-    )
-    date = models.DateTimeField(
-        auto_now_add=True,
-        verbose_name='дата'
-    )
+    title: str = models.CharField(max_length=100, verbose_name='заголовок')
+    slug: str = models.SlugField(max_length=100, unique=True, db_index=True,
+                                 verbose_name="slug")
+    content: str = models.TextField(verbose_name='контент статьи в markdown')
+    cover = models.ImageField(upload_to='covers', verbose_name='обложка')
+    date = models.DateTimeField(auto_now_add=True, verbose_name='дата')
+    is_published = models.BooleanField(default=False, verbose_name='дата')
 
     def __str__(self):
         return self.title
