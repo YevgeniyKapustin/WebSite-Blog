@@ -5,7 +5,7 @@ from articles.models import Article, Image
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ('cover', 'title', 'slug')
+    list_display = ('title', 'slug')
     prepopulated_fields = {'slug': ('title',)}
 
 

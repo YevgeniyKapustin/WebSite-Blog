@@ -2,6 +2,7 @@ import math
 
 from django.db import models
 from django.urls import reverse
+from markdown import markdown
 
 from articles.utils import get_count
 
@@ -26,6 +27,9 @@ class Article(models.Model):
 
     def get_reading_time(self):
         return math.ceil(len(self.content.split()) / 200)  # avg reading speed
+
+    def get_html_content(self):
+        return markdown(self.content)
 
     class Meta:
         ordering = ['-date']
