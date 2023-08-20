@@ -10,14 +10,15 @@
           rel="stylesheet"
           integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
           crossorigin="anonymous">
-        <link rel='stylesheet' href="{% static 'css/style.css' %}">
-    {% block css_addition %}{% endblock %}
+    <link rel='stylesheet' href="{% static 'css/style.css' %}">
+    {% block css_addition %}
+    {% endblock %}
 
     <title>{% block title %}TITLE{% endblock %}</title>
 </head>
 <body class="bg-body-secondary">
 
-{% include 'inc/_navbar.html' %}
+
 
 <div class="content container col-md-12 gy-3 bg-white shadow p-3 mb-5 bg-body-tertiary rounded">
 
@@ -39,6 +40,8 @@
 
     {% endif %}
 
+    {% include 'inc/_navbar.html' %}
+
     {% block content %}
     {% endblock %}
 
@@ -48,6 +51,7 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous">
 </script>
+<script src="{% static '/js/script.js' %}"></script>
 {% block script_addition %}
 {% endblock %}
 </body>

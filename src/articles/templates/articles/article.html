@@ -6,16 +6,28 @@
 {% endblock %}
 
 {% block content %}
-<h1 class="gy-5">{{ article.title }}</h1>
-<p>
-    <span class="" >
+
+<h1 class="gy-5 ps-2 fw-bold border-dark border-5 border-start opacity-75">
+    {{ article.title }}
+</h1>
+<div>
+    <span class="user-select-none" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Дата публикации">
     {{ article.date|date:"F j, Y" }}
     </span>
-    <span class="float-end" >
-         просмотров: {{ article.get_views_count }}
+    <span class="float-end user-select-none" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Просмотры">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+          <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+          <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+        </svg> {{ article.get_views_count }}
     </span>
-</p>
-Читается за {{ article.get_reading_time }} минут
+</div>
+<span class="pb-3 user-select-none" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Время прочтения">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stopwatch" viewBox="0 0 16 16">
+      <path d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z"/>
+      <path d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z"/>
+    </svg>
+    {{ article.get_reading_time }} минуты
+</span>
 <img src="{{ object.cover.url }}" class="rounded mx-auto d-block img-fluid" alt="">
-<p>{{ article.content|safe }}</p>
+<div class="py-3 fs-5">{{ article.content|safe }}</div>
 {% endblock %}

@@ -5,11 +5,15 @@
 {{ title }}
 {% endblock %}
 
+{% block css_addition %}
+<link rel='stylesheet' href="{% static 'css/home.css' %}">
+{% endblock %}
+
 {% block content %}
-<div class="card shadow">
-    <img src="{% static 'home_cover.png' %}" class="rounded mx-auto d-block card-img" alt="">
+<div class="card shadow d-none d-md-block ">
+    <img src="{% static 'img/home_cover.png' %}" class="rounded mx-auto d-block card-img" alt="">
     <div class="border-3 card-body text-dark card-img-overlay">
-        <div class="opacity-75 d-none d-md-block position-absolute top-50 start-50 translate-middle quote">
+            <div class="opacity-75 d-none d-md-block position-absolute top-50 start-50 translate-middle quote">
             <p class="text-bg-dark position-relative p-1 border-start fst-italic font-monospace float-start card-title">
                 А поутру они неизбежно проснулись<br>
                 Не простудились — не замарались<br>
@@ -19,19 +23,14 @@
                 Сеяли доброе, разумное, вечное
             </p>
         </div>
-        <div class="text-bg-dark opacity-75 d-none d-sm-block d-md-none position-absolute top-50 start-50">
-            <p class="m-0 p-1 border-start fst-italic float-end card-title">
-                А поутру они неизбежно проснулись
-            </p>
-        </div>
     </div>
 </div>
 <div class="col-md-12 py-3">
     <div class="row row-cols-1 row-cols-md-3 g-3">
         {% for article in articles %}
-            <a href="{% url 'article' article.slug %}" class="">
+            <a href="{% url 'article' article.slug %}" class="article">
                 <div class="card border-dark">
-                    <img src="{{ article.cover.url }}" class="card-img" alt="">
+                    <img src="{{ article.cover.url }}" class="article-img card-img" alt="">
                     <div class="card-body text-dark card-img-overlay">
                         <h3 class="p-1 border-3 border-start text-bg-dark opacity-75 float-end card-title">{{ article.title }}</h3>
                     </div>

@@ -1,10 +1,37 @@
-.outline {
-  text-shadow:
-    -1px 0 0 #fff,
-    0 -1px 0 #fff,
-    1px 0 0 #fff,
-    0 1px 0 #fff;
+.bi {
+    width: 1em;
+    height: 1em;
 }
-.quote {
-    max-width: 463px
+
+.nav-item {
+    display:inline-block;
+}
+.nav-item:after {
+    display:block;
+    content: '';
+    border-bottom: solid 3px #adb5bd;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}
+.nav-item:hover:after {
+    transform: scaleX(1);
+}
+.nav-item:after {
+    transform-origin:  0% 50%;
+}
+
+.border-start:hover:after {
+    border-left: solid 3px #adb5bd;
+}
+.border-start:after {
+    transition: transform 250ms ease-in-out;
+}
+
+.article {
+    filter: grayscale(0.4);
+    transition: 1s;
+}
+.article:hover {
+    filter: grayscale(0);
+    transition: 0.5s;
 }
