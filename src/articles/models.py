@@ -40,3 +40,7 @@ class ViewCount(models.Model):
     ip_address = models.GenericIPAddressField(
         verbose_name='ip адрес'
     )
+
+
+class Image(models.Model):
+    img = models.ImageField(upload_to='img', verbose_name='изображение')
