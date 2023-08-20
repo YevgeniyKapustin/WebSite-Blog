@@ -4,9 +4,6 @@ from pathlib import Path
 
 from typing import Any, List
 from pydantic_settings import BaseSettings
-from dotenv import load_dotenv
-
-load_dotenv()
 
 
 class DjangoSettings(BaseSettings):
