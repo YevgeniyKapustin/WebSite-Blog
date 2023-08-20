@@ -5,6 +5,10 @@
 {{ article.title }}
 {% endblock %}
 
+{% block css_addition %}
+<link rel='stylesheet' href="{% static 'css/articles.css' %}">
+{% endblock %}
+
 {% block content %}
 
 <h1 class="gy-5 ps-2 fw-bold border-dark border-5 border-start opacity-75">
@@ -30,4 +34,9 @@
 </span>
 <img src="{{ object.cover.url }}" class="rounded mx-auto d-block img-fluid" alt="">
 <div class="py-3 fs-5">{{ article.get_html_content|safe }}</div>
+<div class="btn-up btn-up_hide"></div>
+{% endblock %}
+
+{% block script_addition %}
+<script src="{% static '/js/articles.js' %}"></script>
 {% endblock %}
