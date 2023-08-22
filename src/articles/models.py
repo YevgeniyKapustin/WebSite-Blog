@@ -1,4 +1,5 @@
 import math
+import re
 
 from django.db import models
 from django.urls import reverse
@@ -29,7 +30,20 @@ class Article(models.Model):
         return math.ceil(len(self.content.split()) / 200)  # avg reading speed
 
     def get_html_content(self):
-        return markdown(self.content)
+        r = markdown(self.content)
+        r = re.sub(
+            '!\[\[',
+            '<img src="/media/img/', r
+        )
+        r = re.sub(
+            '\]\]',
+            '" class="rounded mx-auto d-block img-fluid" alt="">', r
+        )
+        return re.sub(
+            '<blockquote>',
+            '<blockquote class="border-dark ps-2 border-3 border-start opacity-75">',
+            r
+        )
 
     class Meta:
         ordering = ['-date']
